@@ -4,9 +4,13 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.co.iei.board.model.dto.BoardDTO;
+
 @Mapper
 public interface BoardDao {
 
 	List selectBoardList();
+
+	BoardDTO selectOneBoard(int boardNo);
 	
 }

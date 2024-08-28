@@ -9,5 +9,15 @@
 		    to_char(board_date,'yyyy-mm-dd hh:mi:ss') as board_date
 		from board order by 1 desc
 	</select>
+	
+	<select id="selectOneBoard" resultType="board">
+		select
+		    board_no,
+		    board_title,
+		    board_content,
+		    board_writer,
+		    to_char(board_date,'yyyy-mm-dd hh:mi:ss') as board_date
+		from board where board_no=#{boardNo}
+	</select>
 
 </mapper>
