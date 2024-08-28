@@ -86,3 +86,40 @@
   padding: 5px;
   box-sizing: border-box;
 }
+.input-wrap > button {
+  width: 100%;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  background-color: #f46b45;
+  color: #fff;
+}
+
+.link-zone {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.link-zone > * {
+  display: block;
+  text-decoration: none;
+  width: 100px;
+  padding: 10px 20px;
+  background-color: #f46b45;
+  color: #fff;
+  outline: none;
+  border: none;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.board-modify-wrap > h3 {
+  text-align: center;
+  color: #f46b45;
+}
+.board-modify {
+  width: 600px;
+  margin: 30px auto;
+}

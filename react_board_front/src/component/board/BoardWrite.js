@@ -1,9 +1,12 @@
+import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const BoardWrite = () => {
   const [boardTitle, setBoardTitle] = useState("");
   const [boardContent, setBoardContent] = useState("");
   const [boardWriter, setBoardWriter] = useState("");
+  const navigate = useNavigate();
   const changeTitle = (e) => {
     setBoardTitle(e.target.value);
   };
@@ -12,6 +15,18 @@ const BoardWrite = () => {
   };
   const changeWriter = (e) => {
     setBoardWriter(e.target.value);
+  };
+  const registBoard = () => {
+    const board = { boardTitle, boardContent, boardWriter };
+    axios
+      .post("http://192.168.10.26:9999/board/insert", board)
+      .then((res) => {
+        console.log(res);
+        navigate("/list");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <div className="board-write-wrap">
@@ -42,6 +57,9 @@ const BoardWrite = () => {
             onChange={changeContent}
             id="boardContent"
           ></textarea>
+        </div>
+        <div className="input-wrap">
+          <button onClick={registBoard}>등록하기</button>
         </div>
       </div>
     </div>

@@ -19,5 +19,19 @@
 		    to_char(board_date,'yyyy-mm-dd hh:mi:ss') as board_date
 		from board where board_no=#{boardNo}
 	</select>
-
+	
+	<insert id="insertBoard">
+		insert into board values(board_seq.nextval,#{boardTitle},#{boardContent},#{boardWriter},sysdate)
+	</insert>
+	
+	<delete id="deleteBoard">
+		delete from board where board_no=#{boardNo}
+	</delete>
+	
+	<update id="updateBoard">
+		update board set
+			board_title=#{boardTitle},
+			board_content=#{boardContent}
+		where board_no=#{boardNo}
+	</update>
 </mapper>
