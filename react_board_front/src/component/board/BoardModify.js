@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const BoardModify = () => {
-  const params = useParams();
+  const params = useParams(); /* 주소창으로 들어온 값 가져오는 것 */
   const navigate = useNavigate();
   const boardNo = params.boardNo;
   useEffect(() => {
